@@ -1,0 +1,438 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff0f6; /* Light pink background */
+    color: #4b0082; /* Dark purple text */
+}
+
+header {
+    background-color: #8a2be2; /* Blue-violet background */
+    color: white;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Ensure positioning context for child elements */
+}
+
+.hero-text {
+    max-width: 50%;
+    padding: 0 2rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transition: opacity 2s;
+    font-family: 'Playfair Display', serif;
+    color: #ff69b4; /* Hot pink text */
+}
+
+.hero-text button {
+    background-color: #ff1493; /* Deep pink background */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-text button:hover {
+    background-color: #c71585; /* Medium violet red background */
+}
+
+.hero-logo {
+    max-width: 50%;
+    height: auto;
+    width: auto; /* Allow width to adjust automatically */
+    object-fit: cover; /* Ensure the logo covers its container */
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    background-color: #9370db; /* Medium purple background */
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: #ff69b4; /* Hot pink background */
+}
+
+/* Container Styles */
+.container {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Box Image Styles */
+.box-image {
+    display: block;
+    margin: 0 auto;
+    width: 200px; /* Fixed width for desktop */
+    height: 200px; /* Fixed height for desktop */
+    object-fit: cover; /* Ensure the image covers the specified dimensions */
+    cursor: pointer; /* Show pointer cursor for clickable images */
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Socks Image Styles - Vertical Alignment with Landscape Cropping */
+.selection-column.socks {
+    display: flex;
+    flex-direction: column; /* Keep socks vertically aligned */
+    align-items: center;
+    gap: 1rem; /* Space between images */
+}
+
+.selection-column.socks img {
+    width: 200px; /* Adjust width for landscape cropping */
+    height: 100px; /* Adjust height for landscape cropping */
+}
+
+.selection-column.socks img.collapsed {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.selection-column.socks img.selected {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .selection-column.socks img {
+        width: 120px; /* Reduced width for mobile */
+        height: 80px; /* Reduced height for mobile */
+    }
+}
+
+/* Snack Image Styles - Keep as is */
+.selection-column.snacks {
+    display: flex;
+    flex-direction: column; /* Ensure snacks are stacked vertically */
+    align-items: center;
+}
+
+.selection-column.snacks label {
+    margin: 0.5rem 0; /* Space between snack items */
+    text-align: center;
+}
+
+.selection-column.snacks img {
+    width: 200px; /* Fixed width for snack images */
+    height: 200px; /* Fixed height for snack images */
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.selection-column.snacks img.collapsed {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.selection-column.snacks img.selected {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text button {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    /* Hide the hero-logo image on mobile */
+    .hero-logo {
+        display: none; /* Hide the logo on mobile devices */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .card {
+        width: 100%; /* Adjust width to 100% on small screens */
+        height: auto; /* Adjust height accordingly */
+        margin: 1rem 0;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .about-section.reverse {
+        flex-direction: column;
+    }
+
+    .about-section img, .about-text {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    /* Adjust box-image sizes for mobile */
+    .box-image {
+        width: 150px; /* Reduced width for mobile */
+        height: 150px; /* Reduced height for mobile */
+    }
+
+    /* Adjust socks images for mobile */
+    .selection-column.socks img {
+        width: 120px; /* Reduced width for mobile */
+        height: 80px; /* Reduced height for mobile */
+    }
+}
+
+/* Contact Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffc0cb; /* Pink background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #ff1493; /* Deep pink background */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #c71585; /* Medium violet red background */
+}
+
+/* Message Box Styles */
+.message-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.message-box p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Backgrounds */
+.premium-bg {
+    background-color: #ffc0cb; /* Pink background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.complementary-bg {
+    background-color: #e6e6fa; /* Lavender background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    margin: 1rem;
+    width: 300px; /* Fixed width for consistency */
+    height: 350px; /* Fixed height to maintain consistency */
+    position: relative; /* Ensure images are positioned relative to this container */
+}
+
+/* Card Styles Continued */
+.card img {
+    width: 100%;
+    height: 100%; /* Ensure images take full height */
+    object-fit: cover; /* Ensure images cover the card area */
+    position: absolute; /* Stack images on top of each other */
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
+}
+
+.card img.active {
+    opacity: 1; /* Fully visible active image */
+}
+
+.card img.inactive {
+    opacity: 0; /* Hidden inactive images */
+}
+
+.card h3 {
+    position: relative; /* Ensure text is positioned relative to its container */
+    z-index: 10; /* Place text above images */
+    margin: 1rem 0;
+    font-family: 'Playfair Display', serif;
+    color: #ff69b4; /* Hot pink text */
+}
+
+.card p {
+    position: relative; /* Ensure text is positioned relative to its container */
+    z-index: 10; /* Place text above images */
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #4b0082; /* Dark purple text */
+}
+
+/* About Section Styles */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #e6e6fa; /* Lavender background */
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse; /* Reverse the direction for alternating layout */
+}
+
+.about-section img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-text {
+    width: 50%;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile Styles Continued */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .about-section.reverse {
+        flex-direction: column;
+    }
+
+    .about-section img,
+    .about-text {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .box-image {
+        width: 100px; /* Reduced width for mobile */
+        height: 100px; /* Reduced height for mobile */
+    }
+
+    .selection-column.socks img {
+        width: 80px; /* Reduced width for mobile */
+        height: 40px; /* Reduced height for mobile */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4b0082; /* Dark purple background */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
